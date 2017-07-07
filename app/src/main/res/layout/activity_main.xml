@@ -1,0 +1,220 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0099cc"
+    tools:context="com.example.toxy.dawid_danieluk_kompas.main">
+
+    <!-- The primary full-screen view. This can be replaced with whatever view
+         is needed to present your content, e.g. VideoView, SurfaceView,
+         TextureView, etc. -->
+
+
+    <TextView
+        android:id="@+id/fullscreen_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:keepScreenOn="true"
+        android:text="@string/dummy_content"
+        android:textColor="#33b5e5"
+        android:textSize="50sp"
+        android:textStyle="bold" />
+
+
+    <!--calosc-->
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:weightSum="100"
+        android:orientation="vertical">
+
+        <!--Obrazki zalezne od pogody-->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="20"
+            android:background="#074e66">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/weather"
+                android:src="@drawable/sunnynoclouds"/>
+
+        </LinearLayout>
+
+        <!--Kompas i dane Cisnienie i Temperatura i Wilgotność-->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="47"
+            android:weightSum="100"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="65">
+
+                <LinearLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    android:layout_gravity="center"
+                    >
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="20dp"
+                        android:id="@+id/kompas"
+                        android:rotation="7"
+                        android:src="@drawable/compass"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="35"
+                android:layout_marginTop="35dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/temperatura"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="19°C"
+                        android:id="@+id/temp"
+                        android:textSize="17sp"
+                        android:padding="5dp"
+                        />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/cisnienie"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:layout_marginTop="15dp"
+                    />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:id="@+id/cisnienie"
+                        android:text="1013 hPa"
+                        android:textSize="17sp"
+                        android:padding="5dp"
+                        />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/wilgotnosc"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:padding="5dp"
+                    android:layout_marginTop="15dp"
+                    />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:id="@+id/wilgotnosc"
+                        android:text="17%"
+                        android:textSize="17sp"
+                        android:padding="5dp"
+                        />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!--Save i Dane buttony-->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="15"
+            android:gravity="center"
+            >
+
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_margin="15dp"
+                android:background="#074e66"
+                android:text="Zapisz Dane"
+                android:onClick="Zapisz"
+                android:textColor="#ffffff"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:layout_margin="10dp"
+                android:background="#074e66"
+                android:text="Historia Pomiarów"
+                android:onClick="Wczytaj"
+                android:textColor="#ffffff"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="16"
+            android:background="#074e66">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ground1"
+                android:id="@+id/ground"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+
+    <!-- This FrameLayout insets its children based on system windows using
+         android:fitsSystemWindows. -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:id="@+id/fullscreen_content_controls"
+            style="?metaButtonBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="@color/black_overlay"
+            android:orientation="horizontal"
+            tools:ignore="UselessParent">
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+</FrameLayout>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Dawid_Danieluk_Kompas</string>
+
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content"></string>
+    <string name="cisnienie">Ciśnienie</string>
+    <string name="temperatura">Temperatura</string>
+    <string name="wilgotnosc">Wilgotność</string>
+</resources>
